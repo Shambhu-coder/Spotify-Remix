@@ -1,6 +1,4 @@
-import styled from 'styled-components'
-
-export const MainDiv = styled.div`
+.login {
   margin: 0;
   padding: 0;
   background-image: url('https://res.cloudinary.com/djlggbdls/image/upload/v1771829659/bg4_r64rjw.jpg');
@@ -10,9 +8,9 @@ export const MainDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+}
 
-export const Form = styled.form`
+.form {
   background-color: #181818;
   height: 350px;
   width: 400px;
@@ -23,43 +21,43 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+}
 
-export const ImgEl = styled.img`
+.logo {
   height: 50px;
   width: 150px;
-`
+}
 
-export const SpotifyRemix = styled.h1`
+.spotify-heading {
   color: #fff;
   font-size: 18px;
   margin-bottom: 24px;
-`
+}
 
-export const FormEl = styled.div`
+.formEl {
   display: flex;
   flex-direction: column;
   align-self: flex-start;
   margin-bottom: 8px;
   width: 100%;
-`
+}
 
-export const LabelEl = styled.label`
+.labelEl {
   color: #fff;
   font-size: 12px;
   margin-bottom: 5px;
-`
+}
 
-export const InputEl = styled.input`
+.inputEl {
   background-color: #fff;
   border-radius: 3px;
   border: none;
   padding: 8px;
   height: 30px;
   width: 100%;
-`
+}
 
-export const LoginBtn = styled.button`
+.loginBtn {
   background-color: #1db954;
   padding: 8px;
   border-radius: 5px;
@@ -68,11 +66,16 @@ export const LoginBtn = styled.button`
   color: #fff;
   margin-top: 10px;
   border: none;
-`
+  cursor: pointer;
+}
 
-export const ErrorMsg = styled.p`
+.loginBtn:hover {
+  background-color: #06441c;
+}
+
+.errorMsg {
   color: red;
   font-size: 14px;
   text-align: center;
   margin-top: 5px;
-`
+}

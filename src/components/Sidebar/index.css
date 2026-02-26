@@ -1,0 +1,30 @@
+.sidebar {
+  background-color: #040306;
+  width: 120px;
+  height: 98vh;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.spotify-logo {
+  width: 90px;
+  height: 42px;
+  margin-top: 20px;
+}
+
+.logout-button {
+  background-color: transparent;
+  height: 56px;
+  width: 37px;
+  border: none;
+}
+
+.logout-logo {
+  width: 37px;
+  height: 56px;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}

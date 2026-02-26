@@ -1,16 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
-import {
-  MainDiv,
-  Form,
-  ImgEl,
-  SpotifyRemix,
-  FormEl,
-  LabelEl,
-  InputEl,
-  LoginBtn,
-  ErrorMsg,
-} from './styledComponents'
+import './index.css'
 
 class Login extends Component {
   state = {username: '', password: '', showSubmitError: false, errorMessage: ''}
@@ -67,32 +57,44 @@ class Login extends Component {
     const {username, password, showSubmitError, errorMessage} = this.state
 
     return (
-      <MainDiv>
-        <Form onSubmit={this.onSubmitForm}>
-          <ImgEl src="https://res.cloudinary.com/djlggbdls/image/upload/v1771830629/Vector_1_dxz43f.jpg" />
-          <SpotifyRemix>Spotify Remix</SpotifyRemix>
-          <FormEl>
-            <LabelEl htmlFor="username">USERNAME</LabelEl>
-            <InputEl
+      <div className="login">
+        <form className="form" onSubmit={this.onSubmitForm}>
+          <img
+            className="logo"
+            alt="logo"
+            src="https://res.cloudinary.com/djlggbdls/image/upload/v1771830629/Vector_1_dxz43f.jpg"
+          />
+          <h1 className="spotify-heading">Spotify Remix</h1>
+          <div className="formEl">
+            <label className="labelEl" htmlFor="username">
+              USERNAME
+            </label>
+            <input
+              className="inputEl"
               type="text"
               id="username"
               value={username}
               onChange={this.onChangeUsername}
             />
-          </FormEl>
-          <FormEl>
-            <LabelEl htmlFor="password">PASSWORD</LabelEl>
-            <InputEl
+          </div>
+          <div className="formEl">
+            <label className="labelEl" htmlFor="password">
+              PASSWORD
+            </label>
+            <input
+              className="inputEl"
               type="password"
               id="password"
               value={password}
               onChange={this.onChangePassword}
             />
-          </FormEl>
-          <LoginBtn>LOGIN</LoginBtn>
-          {showSubmitError && <ErrorMsg>{errorMessage}</ErrorMsg>}
-        </Form>
-      </MainDiv>
+          </div>
+          <button className="loginBtn" type="submit">
+            LOGIN
+          </button>
+          {showSubmitError && <p className="errorMsg">{errorMessage}</p>}
+        </form>
+      </div>
     )
   }
 }
