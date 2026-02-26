@@ -46,7 +46,7 @@ class PlaylistDetails extends Component {
   render() {
     return (
       <div>
-        <h1>Hiii</h1>
+        <h1>Hello</h1>
       </div>
     )
   }
