@@ -134,19 +134,59 @@ class Home extends Component {
     </div>
   )
 
-  failureView = () => (
-    <div className="failure-view">
-      <img
-        className="failure-img"
-        src="https://res.cloudinary.com/djlggbdls/image/upload/v1771912846/alert-triangle_nvbiq9.png"
-        alt="failure"
-      />
-      <p className="failure-text">Something went wrong. Please try again.</p>
-      <button type="button" className="retry-btn">
-        Retry
-      </button>
-    </div>
-  )
+  failureViewCategories = () => {
+    const tryAgain = () => this.getCategories()
+
+    return (
+      <div className="failure-view">
+        <img
+          className="failure-img"
+          src="https://res.cloudinary.com/djlggbdls/image/upload/v1771912846/alert-triangle_nvbiq9.png"
+          alt="failure"
+        />
+        <p className="failure-text">Something went wrong. Please try again.</p>
+        <button type="button" className="retry-btn" onClick={tryAgain}>
+          Retry
+        </button>
+      </div>
+    )
+  }
+
+  failureViewPlaylists = () => {
+    const tryAgain = () => this.getPlaylists()
+
+    return (
+      <div className="failure-view">
+        <img
+          className="failure-img"
+          src="https://res.cloudinary.com/djlggbdls/image/upload/v1771912846/alert-triangle_nvbiq9.png"
+          alt="failure"
+        />
+        <p className="failure-text">Something went wrong. Please try again.</p>
+        <button type="button" className="retry-btn" onClick={tryAgain}>
+          Retry
+        </button>
+      </div>
+    )
+  }
+
+  failureViewNewReleases = () => {
+    const tryAgain = () => this.getNewReleases()
+
+    return (
+      <div className="failure-view">
+        <img
+          className="failure-img"
+          src="https://res.cloudinary.com/djlggbdls/image/upload/v1771912846/alert-triangle_nvbiq9.png"
+          alt="failure"
+        />
+        <p className="failure-text">Something went wrong. Please try again.</p>
+        <button type="button" className="retry-btn" onClick={tryAgain}>
+          Retry
+        </button>
+      </div>
+    )
+  }
 
   playlistsSuccess = () => {
     const {playlists} = this.state
@@ -219,7 +259,7 @@ class Home extends Component {
         return this.loadingView()
 
       case apiRequest.failure:
-        return this.failureView()
+        return this.failureViewPlaylists()
 
       default:
         return null
@@ -237,7 +277,7 @@ class Home extends Component {
         return this.loadingView()
 
       case apiRequest.failure:
-        return this.failureView()
+        return this.failureViewCategories()
 
       default:
         return null
@@ -255,7 +295,7 @@ class Home extends Component {
         return this.loadingView()
 
       case apiRequest.failure:
-        return this.failureView()
+        return this.failureViewNewReleases()
 
       default:
         return null
